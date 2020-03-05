@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="the_little_labyrinth">The Little Labyrinth</string>
+    <string name="medium">MEDIUM</string>
+    <string name="easy">EASY</string>
+    <string name="hard">HARD</string>
+    <string name="select_a_level">Select a level</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_3">3</string>
+</resources>
