@@ -30,6 +30,7 @@ public class easyLvl1 extends AppCompatActivity {
     }
 
     class GameView extends SurfaceView implements Runnable {
+        //This is a comment! (or is it?)
         private SensorManager sensorManager;
         private Sensor sensor;
         private static final float NS2S = 1.0f / 1000000000.0f;
