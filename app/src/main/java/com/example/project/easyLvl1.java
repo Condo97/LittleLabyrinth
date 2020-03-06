@@ -66,19 +66,12 @@ public class easyLvl1 extends AppCompatActivity {
             }
         }
 
-        // Everything that needs to be updated goes in here
-        // In later projects we will have dozens (arrays) of objects.
-        // We will also do other things like collision detection.
         public void update() {
-
-            // If bob is moving (the player is touching the screen)
-            // then move him to the right based on his target speed and the current fps.
             if(isMoving){
             }
 
         }
 
-        // Draw the newly updated scene
         public void draw() {
 
             // Make sure our drawing surface is valid or we crash
@@ -92,7 +85,7 @@ public class easyLvl1 extends AppCompatActivity {
                 // Choose the brush color for drawing
                 paint.setColor(Color.argb(255,  249, 129, 0));
 
-                // Draw bob at bobXPosition, 200 pixels
+                // Insert the ball
                 canvas.drawBitmap(ballMap, xPos, yPos, paint);
 
                 // Draw everything to the screen
@@ -146,8 +139,9 @@ public class easyLvl1 extends AppCompatActivity {
             SensorManager.getRotationMatrixFromVector(deltaRotationMatrix, deltaRotationVector);
 
             if(startOrientation == null){
-
+                startOrientation = deltaRotationMatrix.clone();
             }
+            
         }
     }
     @Override
