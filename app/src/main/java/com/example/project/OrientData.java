@@ -57,6 +57,10 @@ public class OrientData implements SensorEventListener {
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
     }
 
+    public void pause() {
+        sensorManager.unregisterListener(this);
+    }
+
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         // idk what this is for
