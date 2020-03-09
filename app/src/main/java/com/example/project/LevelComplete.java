@@ -25,6 +25,10 @@ public class LevelComplete extends Activity {
         int numCollide = intent.getIntExtra("numCollide", -1);
         int completedTime = intent.getIntExtra("completedTime", -1);
 
+        int totalScore = numCollide + completedTime;
+
+        score.setText(totalScore);
+
         toHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
