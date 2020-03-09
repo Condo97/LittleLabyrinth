@@ -53,7 +53,7 @@ public class MainThread extends Thread {
 
             totalTime += System.nanoTime() - startTime;
             frameCount++;
-            if(frameCount = MAX_FPS){
+            if(frameCount == MAX_FPS){
                 avgFPS = 1000/((totalTime/frameCount)/1000000);
                 frameCount = 0;
                 totalTime = 0;
