@@ -1,27 +1,38 @@
 package com.example.project;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
+
+import android.app.Activity;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
-public class easyLvl1 extends AppCompatActivity {
-    GameView gameView;
-    OrientData orientationData;
+public class easyLvl1 extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        DisplayMetrics display = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(display);
+        Constants.screenWidth = display.widthPixels;
+        Constants.screenHeight = display.heightPixels;
 
+        setContentView(new GamePanel(this));
+    }
+
+
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +83,6 @@ public class easyLvl1 extends AppCompatActivity {
                 canvas = hold.lockCanvas();
 
                 // Draw the background color
-                canvas.drawColor(Color.argb(255,  249, 162, 53));
 
                 // Choose the brush color for drawing
                 paint.setColor(Color.argb(255,  249, 129, 0));
@@ -114,4 +124,5 @@ public class easyLvl1 extends AppCompatActivity {
         super.onPause();
         gameView.pause();
     }
+    */
 }

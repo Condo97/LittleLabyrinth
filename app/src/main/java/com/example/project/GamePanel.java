@@ -2,16 +2,23 @@ package com.example.project;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
+    private Player play;
+    private Point point;
 
     public GamePanel(Context context){
         super(context);
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
+        play = new Player(new Rect(100, 100, 200, 200), Color.RED);
+        point = new Point(150, 150);
         setFocusable(true);
     }
 
@@ -41,9 +48,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void draw(Canvas canvas){
         super.draw(canvas);
+        canvas.drawColor(Color.argb(255,  249, 162, 53));
+        play.draw(canvas);
     }
 
     public void update(){
-
+        play.update();
     }
 }
