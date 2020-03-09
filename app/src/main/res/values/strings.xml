@@ -8,4 +8,7 @@
     <string name="_2">2</string>
     <string name="_1">1</string>
     <string name="_3">3</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="your_score">Your Score:</string>
 </resources>

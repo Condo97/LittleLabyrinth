@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".easyLevels" android:screenOrientation="portrait"></activity>
-        <activity android:name=".easyLvl1" android:screenOrientation="portrait"></activity>
+        <activity android:name=".easyLevels" android:screenOrientation="portrait" />
+        <activity android:name=".easyLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".LevelComplete" android:screenOrientation="portrait" />
 
     </application>
 
