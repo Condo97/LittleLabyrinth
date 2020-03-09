@@ -2,19 +2,16 @@ package com.example.project;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.Rect;
 
-public class Obstacle implements GameObject{
+public class Goal implements GameObject {
     private Rect rect;
     private int color;
 
-    public Obstacle(Rect rect, int color){
+    public Goal(Rect rect, int color){
         this.rect = rect;
         this.color = color;
-    }
-
-    public boolean collision(Player player){
-        return Rect.intersects(rect, player.getRect());
     }
 
     @Override
@@ -27,6 +24,10 @@ public class Obstacle implements GameObject{
     @Override
     public void update() {
 
+    }
+
+    public boolean collision(Player player){
+        return Rect.intersects(rect, player.getRect());
     }
 
     public Rect getRect(){
