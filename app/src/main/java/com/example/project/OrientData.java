@@ -4,6 +4,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import java.util.Arrays;
 
 public class OrientData implements SensorEventListener {
     private SensorManager sensorManager;
@@ -42,12 +43,14 @@ public class OrientData implements SensorEventListener {
         timestamp = event.timestamp;
         float[] deltaRotationMatrix = new float[9];
         SensorManager.getRotationMatrixFromVector(deltaRotationMatrix, deltaRotationVector);
+        SensorManager.getOrientation(deltaRotationMatrix, orientation);
 
         if(startOrientation == null){
-            startOrientation = deltaRotationMatrix.clone();
+            startOrientation = new float[orientation.length];
+            System.arraycopy(orientation, 0, startOrientation, 0, orientation.length);
         }else{
             orientation = deltaRotationMatrix.clone();
-            if(!startOrientation.equals(orientation)){
+            if(!Arrays.equals(startOrientation, orientation)){
 
             }
         }

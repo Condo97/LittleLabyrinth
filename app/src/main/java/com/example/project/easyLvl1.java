@@ -20,6 +20,7 @@ import android.view.View;
 
 public class easyLvl1 extends AppCompatActivity {
     GameView gameView;
+    OrientData orientationData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +61,6 @@ public class easyLvl1 extends AppCompatActivity {
         }
 
         public void update() {
-            if(isMoving){
-            }
 
         }
 
