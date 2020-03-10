@@ -61,11 +61,6 @@ public class MainThread extends Thread {
         }
     }
 
-    public void complete(){
-        this.setRun(false);
-        this.holder.unlockCanvasAndPost(canvas);
-    }
-
     public void setRun(boolean isRunning){
         this.isRunning = isRunning;
     }

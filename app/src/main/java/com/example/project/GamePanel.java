@@ -1,9 +1,9 @@
 package com.example.project;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.SurfaceHolder;
@@ -13,14 +13,17 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private Player play;
     private Point point;
+    private Paint paint = new Paint();
     private Goal goal;
     private Obstacle obstacle1;
     private Obstacle obstacle2;
     private Obstacle obstacle3;
+    private Rect rect = new Rect(0, 0, Constants.screenWidth, 100);
     private int numCollide = 0;
     private Controls data;
     private boolean complete = false;
     private long frameTime;
+    long completedTime;
 
     public GamePanel(Context context) {
         super(context);
@@ -76,6 +79,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         obstacle2.draw(canvas);
         obstacle3.draw(canvas);
         update();
+        if(complete){
+            paint.setTextSize(40);
+            paint.setColor(Color.BLACK);
+            drawText(canvas, paint, "Congratulations! Your Score is: " + (completedTime + numCollide));
+        }
     }
 
     public void update(){
@@ -136,19 +144,23 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             play.update(point);
 
             if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
-                numCollide++;
+                numCollide += 10;
             }
 
             if(goal.collision(play)){
                 complete = true;
-                long completedTime = System.currentTimeMillis();
-                Intent intent = new Intent(getContext(), LevelComplete.class);
-                intent.putExtra("numCollide", numCollide);
-                intent.putExtra("completedTime", (int)(completedTime*1000));
-
-                thread.complete();
-                getContext().startActivity(intent);
+                completedTime = System.currentTimeMillis()/1000000000;
             }
         }
+    }
+
+    private void drawText(Canvas canvas, Paint paint, String text) {
+        paint.setTextAlign(Paint.Align.LEFT);
+        canvas.getClipBounds(rect);
+        int cWidth = rect.width();
+        paint.getTextBounds(text, 0, text.length(), rect);
+        float x = cWidth / 2f - rect.width() / 2f - rect.left;
+        float y = 100;
+        canvas.drawText(text, x, y, paint);
     }
 }
