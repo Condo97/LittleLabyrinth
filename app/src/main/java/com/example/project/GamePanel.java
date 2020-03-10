@@ -1,6 +1,5 @@
 package com.example.project;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -11,7 +10,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
-    private Activity game = new Activity();
     private MainThread thread;
     private Player play;
     private Point point;
@@ -103,29 +101,29 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 point.y = Constants.screenHeight;
             if(obstacle1.collision(play)){
                 if(obstacle1.getRect().top <= play.getRect().bottom && obstacle1.getRect().top > play.getRect().top){
-                    point.y = obstacle1.getRect().top-60;
+                    point.y = obstacle1.getRect().top-5;
                 }else if(obstacle1.getRect().bottom >= play.getRect().top && obstacle1.getRect().bottom < play.getRect().bottom){
-                    point.y = obstacle1.getRect().bottom+60;
+                    point.y = obstacle1.getRect().bottom+5;
                 }else if(obstacle1.getRect().left <= play.getRect().right && obstacle1.getRect().left > play.getRect().left){
-                    point.x = obstacle1.getRect().left-60;
+                    point.x = obstacle1.getRect().left-5;
                 }else if(obstacle1.getRect().right >= play.getRect().left && obstacle1.getRect().right < play.getRect().right){
-                    point.x = obstacle1.getRect().right+60;
+                    point.x = obstacle1.getRect().right+5;
                 }
-            }else if(obstacle1.collision(play)){
-                if(obstacle1.getRect().top <= play.getRect().bottom && obstacle1.getRect().top > play.getRect().top){
-                    point.y = obstacle1.getRect().top-60;
-                }else if(obstacle1.getRect().bottom >= play.getRect().top && obstacle1.getRect().bottom < play.getRect().bottom){
-                    point.y = obstacle1.getRect().bottom+60;
-                }else if(obstacle1.getRect().left <= play.getRect().right && obstacle1.getRect().left > play.getRect().left){
-                    point.x = obstacle1.getRect().left-60;
-                }else if(obstacle1.getRect().right >= play.getRect().left && obstacle1.getRect().right < play.getRect().right){
-                    point.x = obstacle1.getRect().right+60;
+            }else if(obstacle2.collision(play)){
+                if(obstacle2.getRect().top <= play.getRect().bottom && obstacle2.getRect().top > play.getRect().top){
+                    point.y = obstacle2.getRect().top-5;
+                }else if(obstacle2.getRect().bottom >= play.getRect().top && obstacle2.getRect().bottom < play.getRect().bottom){
+                    point.y = obstacle2.getRect().bottom+5;
+                }else if(obstacle2.getRect().left <= play.getRect().right && obstacle2.getRect().left > play.getRect().left){
+                    point.x = obstacle2.getRect().left-5;
+                }else if(obstacle2.getRect().right >= play.getRect().left && obstacle2.getRect().right < play.getRect().right){
+                    point.x = obstacle2.getRect().right+5;
                 }
             }
 
             play.update(point);
 
-            if(obstacle1.collision(play)) {
+            if(obstacle1.collision(play) || obstacle2.collision(play)) {
                 numCollide++;
             }
 
@@ -135,7 +133,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 Intent intent = new Intent(getContext(), LevelComplete.class);
                 intent.putExtra("numCollide", numCollide);
                 intent.putExtra("completedTime", (int)(completedTime*1000));
-                game.startActivity(intent);
+                getContext().startActivity(intent);
             }
         }
     }
