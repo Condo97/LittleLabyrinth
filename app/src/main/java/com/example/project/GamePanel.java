@@ -103,17 +103,17 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             else if(point.y > Constants.screenHeight)
                 point.y = Constants.screenHeight;
             if(obstacle1.collision(play)){
-                if(obstacle1.getRect().top <= play.getRect().bottom){
-                    point.y = obstacle1.getRect().top-50;
+                if(obstacle1.getRect().top == play.getRect().bottom){
+                    point.y = obstacle1.getRect().top-60;
                 }
-                if(obstacle1.getRect().bottom >= play.getRect().top){
-                    point.y = obstacle1.getRect().bottom+50;
+                if(obstacle1.getRect().bottom == play.getRect().top){
+                    point.y = obstacle1.getRect().bottom+60;
                 }
-                if(obstacle1.getRect().left <= play.getRect().right){
-                    point.x = obstacle1.getRect().left-50;
+                if(obstacle1.getRect().left == play.getRect().right){
+                    point.x = obstacle1.getRect().left-60;
                 }
-                if(obstacle1.getRect().right >= play.getRect().left){
-                    point.x = obstacle1.getRect().right+50;
+                if(obstacle1.getRect().right == play.getRect().left){
+                    point.x = obstacle1.getRect().right+60;
                 }
             }
 
