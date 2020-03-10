@@ -31,11 +31,13 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
         play = new Player(new Rect(100, 100, 200, 200), Color.RED);
-        goal = new Goal(new Rect(800, 1500, 925, 1625), Color.GREEN);
+        goal = new Goal(new Rect(500, 1100, 600, 1200), Color.GREEN);
+        obstacle1 = new Obstacle(new Rect(0, 225, 500, 325), Color.BLACK);
         point = new Point(150, 150);
-        data = new Controls();
+        data = new Controls(context);
         frameTime = System.currentTimeMillis();
         setFocusable(true);
+        setWillNotDraw(false);
     }
 
     @Override
@@ -66,11 +68,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     @Override
-    public void draw(Canvas canvas){
-        super.draw(canvas);
+    protected void onDraw(Canvas canvas){
+        super.onDraw(canvas);
+        invalidate();
         canvas.drawColor(Color.argb(255,  249, 162, 53));
         play.draw(canvas);
         goal.draw(canvas);
+        obstacle1.draw(canvas);
+        update();
     }
 
     public void update(){
@@ -86,6 +91,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
                 point.x += Math.abs(xSpeed*elapsedTime) > 5 ? xSpeed*elapsedTime : 0;
                 point.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
+                System.out.println(point.x + " " + point.y);
             }
 
             if(point.x < 0)
@@ -96,12 +102,24 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 point.y = 0;
             else if(point.y > Constants.screenHeight)
                 point.y = Constants.screenHeight;
+            if(obstacle1.collision(play)){
+                if(obstacle1.getRect().top <= play.getRect().bottom){
+                    point.y = obstacle1.getRect().top-50;
+                }
+                if(obstacle1.getRect().bottom >= play.getRect().top){
+                    point.y = obstacle1.getRect().bottom+50;
+                }
+                if(obstacle1.getRect().left <= play.getRect().right){
+                    point.x = obstacle1.getRect().left-50;
+                }
+                if(obstacle1.getRect().right >= play.getRect().left){
+                    point.x = obstacle1.getRect().right+50;
+                }
+            }
 
             play.update(point);
 
-            if(obstacle1.collision(play) || obstacle2.collision(play)
-                    || obstacle3.collision(play) || obstacle4.collision(play)
-                    || obstacle5.collision(play)) {
+            if(obstacle1.collision(play)) {
                 numCollide++;
             }
 

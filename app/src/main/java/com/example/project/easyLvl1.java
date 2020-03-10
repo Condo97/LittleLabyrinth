@@ -18,6 +18,6 @@ public class easyLvl1 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        setContentView(new GamePanel(this));
+        setContentView(new GamePanel(this.getApplicationContext()));
     }
 }

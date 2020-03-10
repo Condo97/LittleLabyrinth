@@ -15,8 +15,8 @@ public class Controls implements SensorEventListener {
     private float[] orientation = new float[3];
     private float[] startOrientation = null;
 
-    public Controls() {
-        manager = (SensorManager)Constants.CURRENT_CONTEXT.getSystemService(Context.SENSOR_SERVICE);
+    public Controls(Context context) {
+        manager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
         accelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = manager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
