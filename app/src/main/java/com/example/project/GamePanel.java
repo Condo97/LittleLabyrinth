@@ -54,9 +54,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     public void surfaceDestroyed(SurfaceHolder holder){
         boolean retry = true;
-        data.pause();
         while(retry){
             try{
+                data.pause();
                 thread.setRun(false);
                 thread.join();
             }catch (Exception e) {e.printStackTrace();}
@@ -145,6 +145,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 Intent intent = new Intent(getContext(), LevelComplete.class);
                 intent.putExtra("numCollide", numCollide);
                 intent.putExtra("completedTime", (int)(completedTime*1000));
+
                 thread.complete();
                 getContext().startActivity(intent);
             }
