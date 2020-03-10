@@ -16,6 +16,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private Goal goal;
     private Obstacle obstacle1;
     private Obstacle obstacle2;
+    private Obstacle obstacle3;
     private int numCollide = 0;
     private Controls data;
     private boolean complete = false;
@@ -26,9 +27,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
         play = new Player(new Rect(100, 100, 200, 200), Color.RED);
-        goal = new Goal(new Rect(500, 1100, 600, 1200), Color.GREEN);
-        obstacle1 = new Obstacle(new Rect(0, 225, 500, 325), Color.BLACK);
-        obstacle2 = new Obstacle(new Rect(4*Constants.screenWidth/7, 500, Constants.screenWidth, 600), Color.BLACK);
+        goal = new Goal(new Rect(Constants.screenWidth - 200, Constants.screenHeight - 200, Constants.screenWidth - 100, Constants.screenHeight - 100), Color.GREEN);
+        obstacle1 = new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK);
+        obstacle2 = new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK);
+        obstacle3 = new Obstacle(new Rect( 300, Constants.screenHeight/2 - 50, Constants.screenWidth - 300, Constants.screenHeight/2 + 50), Color.BLACK);
         point = new Point(150, 150);
         data = new Controls(context);
         frameTime = System.currentTimeMillis();
@@ -72,6 +74,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         goal.draw(canvas);
         obstacle1.draw(canvas);
         obstacle2.draw(canvas);
+        obstacle3.draw(canvas);
         update();
     }
 
@@ -88,7 +91,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
                 point.x += Math.abs(xSpeed*elapsedTime) > 5 ? xSpeed*elapsedTime : 0;
                 point.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
-                System.out.println(point.x + " " + point.y);
             }
 
             if(point.x < 0)
@@ -101,29 +103,39 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 point.y = Constants.screenHeight;
             if(obstacle1.collision(play)){
                 if(obstacle1.getRect().top <= play.getRect().bottom && obstacle1.getRect().top > play.getRect().top){
-                    point.y = obstacle1.getRect().top-5;
+                    point.y = obstacle1.getRect().top-55;
                 }else if(obstacle1.getRect().bottom >= play.getRect().top && obstacle1.getRect().bottom < play.getRect().bottom){
-                    point.y = obstacle1.getRect().bottom+5;
+                    point.y = obstacle1.getRect().bottom+55;
                 }else if(obstacle1.getRect().left <= play.getRect().right && obstacle1.getRect().left > play.getRect().left){
-                    point.x = obstacle1.getRect().left-5;
+                    point.x = obstacle1.getRect().left-55;
                 }else if(obstacle1.getRect().right >= play.getRect().left && obstacle1.getRect().right < play.getRect().right){
-                    point.x = obstacle1.getRect().right+5;
+                    point.x = obstacle1.getRect().right+55;
                 }
             }else if(obstacle2.collision(play)){
                 if(obstacle2.getRect().top <= play.getRect().bottom && obstacle2.getRect().top > play.getRect().top){
-                    point.y = obstacle2.getRect().top-5;
+                    point.y = obstacle2.getRect().top-55;
                 }else if(obstacle2.getRect().bottom >= play.getRect().top && obstacle2.getRect().bottom < play.getRect().bottom){
-                    point.y = obstacle2.getRect().bottom+5;
+                    point.y = obstacle2.getRect().bottom+55;
                 }else if(obstacle2.getRect().left <= play.getRect().right && obstacle2.getRect().left > play.getRect().left){
-                    point.x = obstacle2.getRect().left-5;
+                    point.x = obstacle2.getRect().left-55;
                 }else if(obstacle2.getRect().right >= play.getRect().left && obstacle2.getRect().right < play.getRect().right){
-                    point.x = obstacle2.getRect().right+5;
+                    point.x = obstacle2.getRect().right+55;
+                }
+            }else if(obstacle3.collision(play)) {
+                if (obstacle3.getRect().top <= play.getRect().bottom && obstacle3.getRect().top > play.getRect().top) {
+                    point.y = obstacle3.getRect().top - 55;
+                } else if (obstacle3.getRect().bottom >= play.getRect().top && obstacle3.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle3.getRect().bottom + 55;
+                } else if (obstacle3.getRect().left <= play.getRect().right && obstacle3.getRect().left > play.getRect().left) {
+                    point.x = obstacle3.getRect().left - 55;
+                } else if (obstacle3.getRect().right >= play.getRect().left && obstacle3.getRect().right < play.getRect().right) {
+                    point.x = obstacle3.getRect().right + 55;
                 }
             }
 
             play.update(point);
 
-            if(obstacle1.collision(play) || obstacle2.collision(play)) {
+            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
                 numCollide++;
             }
 
@@ -133,6 +145,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 Intent intent = new Intent(getContext(), LevelComplete.class);
                 intent.putExtra("numCollide", numCollide);
                 intent.putExtra("completedTime", (int)(completedTime*1000));
+                thread.complete();
                 getContext().startActivity(intent);
             }
         }
