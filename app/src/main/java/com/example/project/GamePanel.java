@@ -72,7 +72,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         invalidate();
-        canvas.drawColor(Color.argb(255,  249, 162, 53));
+        canvas.drawColor(Color.argb(255,  245, 165, 55));
         play.draw(canvas);
         goal.draw(canvas);
         obstacle1.draw(canvas);
@@ -83,6 +83,35 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             paint.setTextSize(40);
             paint.setColor(Color.BLACK);
             drawText(canvas, paint, "Congratulations! Your Score is: " + (completedTime + numCollide));
+            int r = 245;
+            int g = 165;
+            int b = 55;
+            while(true){
+                while(r < 255){
+                    r += 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+                while(g < 255){
+                    g += 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+                while(b < 255){
+                    b += 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+                while(r >= 0){
+                    r -= 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+                while(g >= 0){
+                    g -= 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+                while(b >= 0){
+                    b -= 10;
+                    canvas.drawColor(Color.argb(255, r, g, b));
+                }
+            }
         }
     }
 
