@@ -17,6 +17,10 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
     private Obstacle obstacle1;
     private Obstacle obstacle2;
     private Obstacle obstacle3;
+    private Obstacle obstacle4;
+    private Obstacle obstacle5;
+    private Obstacle obstacle6;
+    private Obstacle obstacle7;
     private Rect rect = new Rect(0, 0, Constants.screenWidth, 100);
     private int numCollide = 0;
     private Controls data;
@@ -28,7 +32,7 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
         super(context);
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
-        play = new Player(new Rect(100, 100, 200, 200), Color.RED);
+        play = new Player(new Rect(100, 100, 175, 175), Color.RED);
         goal = new Goal(new Rect(Constants.screenWidth - 200, Constants.screenHeight - 200, Constants.screenWidth - 100, Constants.screenHeight - 100), Color.GREEN);
         obstacle1 = new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK);
         obstacle2 = new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK);
