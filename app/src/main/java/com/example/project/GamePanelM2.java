@@ -172,7 +172,7 @@ public class GamePanelM2 extends GamePanel implements SurfaceHolder.Callback {
             play.update(point);
 
             if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
-                numCollide += 10;
+                numCollide += 50;
             }
 
             if(goal.collision(play)){
