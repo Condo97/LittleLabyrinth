@@ -22,7 +22,6 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
     private Obstacle obstacle6;
     private Obstacle obstacle7;
     private Obstacle obstacle8;
-    private Obstacle obstacle9;
     private Rect rect = new Rect(0, 0, Constants.screenWidth, 100);
     private int numCollide = 0;
     private Controls data;
