@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
         setContentView(R.layout.activity_main);
+        startService(new Intent(this, MusicService.class));
 
         easy = findViewById(R.id.easy);
         medium = findViewById(R.id.medium);
