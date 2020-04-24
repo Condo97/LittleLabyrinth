@@ -37,9 +37,12 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
         goal = new Goal(new Rect(Constants.screenWidth - 100, Constants.screenHeight - 100, Constants.screenWidth - 25, Constants.screenHeight - 25), Color.GREEN);
         obstacle1 = new Obstacle(new Rect(0, 200, (int)(.5*Constants.screenWidth), 275), Color.BLACK);
         obstacle2 = new Obstacle(new Rect((int)(.5*Constants.screenWidth) + 75, 200, Constants.screenWidth, 275), Color.BLACK);
-        obstacle3 = new Obstacle(new Rect( (int)(.5*Constants.screenWidth) - 75, (int)(.6*Constants.screenHeight), (int)(.5*Constants.screenWidth), Constants.screenHeight - 100), Color.BLACK);
-        //obstacle4 = new Obstacle((new Rect()));
-        //obstacle5 = new Obstacle((new Rect()));
+        obstacle3 = new Obstacle(new Rect( (int)(.5*Constants.screenWidth) - 75, (int)(.6*Constants.screenHeight), (int)(.5*Constants.screenWidth), Constants.screenHeight), Color.BLACK);
+        obstacle4 = new Obstacle(new Rect((int)(.5*Constants.screenWidth), (int)(.2*Constants.screenHeight), (int)(.85*Constants.screenWidth), (int)(.2*Constants.screenHeight) + 75), Color.BLACK);
+        obstacle5 = new Obstacle(new Rect((int)(.85*Constants.screenWidth) + 100, (int)(.2*Constants.screenHeight), Constants.screenWidth, (int)(.5*Constants.screenWidth) - 100), Color.BLACK);
+        obstacle6 = new Obstacle(new Rect((int)(.5*Constants.screenWidth), (int)(.5*Constants.screenHeight), (int)(.85*Constants.screenWidth) + 100, (int)(.5*Constants.screenHeight) + 75), Color.BLACK);
+        obstacle7 = new Obstacle(new Rect((int)(.7*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 75, (int)(.7*Constants.screenWidth) + 75, Constants.screenHeight - 300), Color.BLACK);
+        obstacle8 = new Obstacle(new Rect((int)(.5*Constants.screenWidth) + 25, Constants.screenHeight - 200, Constants.screenWidth, Constants.screenHeight - 125), Color.BLACK);
 
         point = new Point(150, 150);
         data = new Controls(context);
@@ -139,6 +142,10 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
                 point.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
             }
 
+            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
+                numCollide += 50;
+            }
+
             if(point.x < 0)
                 point.x = 0;
             else if(point.x > Constants.screenWidth)
@@ -180,10 +187,6 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
             }
 
             play.update(point);
-
-            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
-                numCollide += 50;
-            }
 
             if(goal.collision(play)){
                 complete = true;

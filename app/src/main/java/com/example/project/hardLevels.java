@@ -1,7 +1,5 @@
 package com.example.project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -10,9 +8,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    Button easy, medium, hard;
-    Intent toDifficulty;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class hardLevels extends AppCompatActivity {
+    Button lvl1, lvl2, lvl3;
+    Intent toLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,37 +23,34 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(display);
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
-        setContentView(R.layout.activity_main);
-        startService(new Intent(this, MusicService.class));
+        setContentView(R.layout.easy_levels);
 
-        easy = findViewById(R.id.easy);
-        medium = findViewById(R.id.medium);
-        hard = findViewById(R.id.hard);
+        lvl1 = findViewById(R.id.elvl1);
+        lvl2 = findViewById(R.id.elvl2);
+        lvl3 = findViewById(R.id.elvl3);
 
-        easy.setOnClickListener(new View.OnClickListener() {
+        lvl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDifficulty = new Intent(getApplicationContext(), easyLevels.class);
-                startActivity(toDifficulty);
+                toLevel = new Intent(getApplicationContext(), mediumLvl1.class);
+                startActivity(toLevel);
             }
         });
 
-        medium.setOnClickListener(new View.OnClickListener() {
+        lvl2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDifficulty = new Intent(getApplicationContext(), mediumLevels.class);
-                startActivity(toDifficulty);
+                toLevel = new Intent(getApplicationContext(), mediumLvl2.class);
+                startActivity(toLevel);
             }
         });
 
-        hard.setOnClickListener(new View.OnClickListener() {
+        lvl3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDifficulty = new Intent(getApplicationContext(), hardLevels.class);
-                startActivity(toDifficulty);
+                toLevel = new Intent(getApplicationContext(), mediumLvl3.class);
+                startActivity(toLevel);
             }
         });
     }
-
-
 }

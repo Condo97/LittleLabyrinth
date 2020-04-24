@@ -129,6 +129,10 @@ public class GamePanelM2 extends GamePanel implements SurfaceHolder.Callback {
                 point.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
             }
 
+            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
+                numCollide += 50;
+            }
+
             if(point.x < 0)
                 point.x = 0;
             else if(point.x > Constants.screenWidth)
@@ -170,10 +174,6 @@ public class GamePanelM2 extends GamePanel implements SurfaceHolder.Callback {
             }
 
             play.update(point);
-
-            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
-                numCollide += 50;
-            }
 
             if(goal.collision(play)){
                 complete = true;
