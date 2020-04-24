@@ -88,42 +88,16 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
         obstacle1.draw(canvas);
         obstacle2.draw(canvas);
         obstacle3.draw(canvas);
-        //obstacle4.draw(canvas);
-        //obstacle5.draw(canvas);
+        obstacle4.draw(canvas);
+        obstacle5.draw(canvas);
+        obstacle6.draw(canvas);
+        obstacle7.draw(canvas);
+        obstacle8.draw(canvas);
         update();
         if(complete){
             paint.setTextSize(40);
             paint.setColor(Color.BLACK);
             drawText(canvas, paint, "Congratulations! Your Score is: " + (completedTime + numCollide));
-            int r = 245;
-            int g = 165;
-            int b = 55;
-            while(true){
-                while(r < 255){
-                    r += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(g < 255){
-                    g += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(b < 255){
-                    b += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(r >= 0){
-                    r -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(g >= 0){
-                    g -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(b >= 0){
-                    b -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-            }
         }
     }
 
@@ -142,7 +116,9 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
                 point.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
             }
 
-            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
+            if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play) ||
+                obstacle4.collision(play) || obstacle5.collision(play) || obstacle6.collision(play) ||
+                obstacle7.collision(play) || obstacle8.collision(play)) {
                 numCollide += 50;
             }
 
@@ -183,6 +159,56 @@ public class GamePanelM1 extends GamePanel implements SurfaceHolder.Callback {
                     point.x = obstacle3.getRect().left - 55;
                 } else if (obstacle3.getRect().right >= play.getRect().left && obstacle3.getRect().right < play.getRect().right) {
                     point.x = obstacle3.getRect().right + 55;
+                }
+            }else if(obstacle4.collision(play)) {
+                if (obstacle4.getRect().top <= play.getRect().bottom && obstacle4.getRect().top > play.getRect().top) {
+                    point.y = obstacle4.getRect().top - 55;
+                } else if (obstacle4.getRect().bottom >= play.getRect().top && obstacle4.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle4.getRect().bottom + 55;
+                } else if (obstacle4.getRect().left <= play.getRect().right && obstacle4.getRect().left > play.getRect().left) {
+                    point.x = obstacle4.getRect().left - 55;
+                } else if (obstacle4.getRect().right >= play.getRect().left && obstacle4.getRect().right < play.getRect().right) {
+                    point.x = obstacle4.getRect().right + 55;
+                }
+            }else if(obstacle5.collision(play)) {
+                if (obstacle5.getRect().top <= play.getRect().bottom && obstacle5.getRect().top > play.getRect().top) {
+                    point.y = obstacle5.getRect().top - 55;
+                } else if (obstacle5.getRect().bottom >= play.getRect().top && obstacle5.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle5.getRect().bottom + 55;
+                } else if (obstacle5.getRect().left <= play.getRect().right && obstacle5.getRect().left > play.getRect().left) {
+                    point.x = obstacle5.getRect().left - 55;
+                } else if (obstacle5.getRect().right >= play.getRect().left && obstacle5.getRect().right < play.getRect().right) {
+                    point.x = obstacle5.getRect().right + 55;
+                }
+            }else if(obstacle6.collision(play)) {
+                if (obstacle6.getRect().top <= play.getRect().bottom && obstacle6.getRect().top > play.getRect().top) {
+                    point.y = obstacle6.getRect().top - 55;
+                } else if (obstacle6.getRect().bottom >= play.getRect().top && obstacle6.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle6.getRect().bottom + 55;
+                } else if (obstacle6.getRect().left <= play.getRect().right && obstacle6.getRect().left > play.getRect().left) {
+                    point.x = obstacle6.getRect().left - 55;
+                } else if (obstacle6.getRect().right >= play.getRect().left && obstacle6.getRect().right < play.getRect().right) {
+                    point.x = obstacle6.getRect().right + 55;
+                }
+            }else if(obstacle7.collision(play)) {
+                if (obstacle7.getRect().top <= play.getRect().bottom && obstacle7.getRect().top > play.getRect().top) {
+                    point.y = obstacle7.getRect().top - 55;
+                } else if (obstacle7.getRect().bottom >= play.getRect().top && obstacle7.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle7.getRect().bottom + 55;
+                } else if (obstacle7.getRect().left <= play.getRect().right && obstacle7.getRect().left > play.getRect().left) {
+                    point.x = obstacle7.getRect().left - 55;
+                } else if (obstacle7.getRect().right >= play.getRect().left && obstacle7.getRect().right < play.getRect().right) {
+                    point.x = obstacle7.getRect().right + 55;
+                }
+            }else if(obstacle8.collision(play)) {
+                if (obstacle8.getRect().top <= play.getRect().bottom && obstacle8.getRect().top > play.getRect().top) {
+                    point.y = obstacle8.getRect().top - 55;
+                } else if (obstacle8.getRect().bottom >= play.getRect().top && obstacle8.getRect().bottom < play.getRect().bottom) {
+                    point.y = obstacle8.getRect().bottom + 55;
+                } else if (obstacle8.getRect().left <= play.getRect().right && obstacle8.getRect().left > play.getRect().left) {
+                    point.x = obstacle8.getRect().left - 55;
+                } else if (obstacle8.getRect().right >= play.getRect().left && obstacle8.getRect().right < play.getRect().right) {
+                    point.x = obstacle8.getRect().right + 55;
                 }
             }
 
