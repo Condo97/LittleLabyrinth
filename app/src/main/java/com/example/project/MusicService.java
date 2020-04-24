@@ -18,7 +18,7 @@ public class MusicService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        bgmusic = MediaPlayer.create(this, R.raw.Soundtrack);
+        bgmusic = MediaPlayer.create(this, R.raw.soundtrack);
         bgmusic.setLooping(true);
         bgmusic.start();
         return START_STICKY;
