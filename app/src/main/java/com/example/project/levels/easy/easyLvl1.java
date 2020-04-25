@@ -28,16 +28,23 @@ public class easyLvl1 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
+        //So all objects are created here rather than the GamePanel classes
         Player player = new Player(new Rect(100, 100, 200, 200), Color.RED);
         Goal goal = new Goal(new Rect(Constants.screenWidth - 200, Constants.screenHeight - 200, Constants.screenWidth - 100, Constants.screenHeight - 100), Color.GREEN);
+
+        //This was the deadzone thing that was 5 in easy, 2 in medium, and was established as 1 in hard
         int difficultyDeadzoneConstant = 5;
+
+        //This was the collision scoring constant that was 10 in easy, 50 in medium, and was established as 100 in hard
         int difficultyCollisionScoringConstant = 10;
 
+        //All obstacles in the game are added to this ArrayList
         ArrayList<Obstacle> obstacles2 = new ArrayList<>();
         obstacles2.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
         obstacles2.add(new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK));
         obstacles2.add(new Obstacle(new Rect( 300, Constants.screenHeight/2 - 50, Constants.screenWidth - 300, Constants.screenHeight/2 + 50), Color.BLACK));
 
+        //GamePanel is now one class rather than a new GamePanel for each level, and must include these variables
         setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles2));
     }
 }
