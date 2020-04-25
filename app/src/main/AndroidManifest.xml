@@ -19,10 +19,16 @@
         </activity>
         <activity android:name=".levels.easy.easyLevels" android:screenOrientation="portrait" />
         <activity android:name=".levels.easy.easyLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".levels.easy.easyLvl2" android:screenOrientation="portrait" />
+        <activity android:name=".levels.easy.easyLvl3" android:screenOrientation="portrait" />
         <activity android:name=".levels.medium.mediumLevels" android:screenOrientation="portrait" />
         <activity android:name=".levels.medium.mediumLvl1" android:screenOrientation="portrait" />
         <activity android:name=".levels.medium.mediumLvl2" android:screenOrientation="portrait" />
         <activity android:name=".levels.medium.mediumLvl3" android:screenOrientation="portrait" />
+        <activity android:name=".levels.hard.hardLevels" android:screenOrientation="portrait" />
+        <activity android:name=".levels.hard.hardLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".levels.hard.hardLvl2" android:screenOrientation="portrait" />
+        <activity android:name=".levels.hard.hardLvl3" android:screenOrientation="portrait" />
 
         <service android:name=".MusicService" android:stopWithTask="true"/>
     </application>

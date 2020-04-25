@@ -13,8 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.project.Constants;
 import com.example.project.R;
 
-public class easyLevels extends AppCompatActivity
-{
+public class easyLevels extends AppCompatActivity {
     Button lvl1, lvl2, lvl3;
     Intent toLevel;
 
@@ -41,20 +40,20 @@ public class easyLevels extends AppCompatActivity
             }
         });
 
-//        lvl2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                toLevel = new Intent(getApplicationContext(), easyLvl2.class);
-//                startActivity(toLevel);
-//            }
-//        });
+        lvl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toLevel = new Intent(getApplicationContext(), easyLvl2.class);
+                startActivity(toLevel);
+            }
+        });
 
-//        lvl1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                toLevel = new Intent(getApplicationContext(), easyLvl1.class);
-//                startActivity(toLevel);
-//            }
-//        });
+        lvl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toLevel = new Intent(getApplicationContext(), easyLvl3.class);
+                startActivity(toLevel);
+            }
+        });
     }
 }
