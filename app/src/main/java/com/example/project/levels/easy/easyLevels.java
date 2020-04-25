@@ -14,7 +14,6 @@ import com.example.project.Constants;
 import com.example.project.R;
 
 public class easyLevels extends AppCompatActivity {
-    //DELETE AFTER COMMIT
     Button lvl1, lvl2, lvl3;
     Intent toLevel;
 
