@@ -19,6 +19,6 @@ public class mediumLvl1 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        setContentView(new GamePanelM1(this.getApplicationContext()));
+//        setContentView(new GamePanelM1(this.getApplicationContext()));
     }
 }

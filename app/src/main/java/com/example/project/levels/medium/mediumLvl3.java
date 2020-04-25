@@ -19,6 +19,6 @@ public class mediumLvl3 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        setContentView(new GamePanelM3(this.getApplicationContext()));
+//        setContentView(new GamePanelM3(this.getApplicationContext()));
     }
 }

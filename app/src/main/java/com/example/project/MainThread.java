@@ -3,17 +3,17 @@ package com.example.project;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
-import com.example.project.levels.easy.GamePanelE1;
+import com.example.project.levels.GamePanel;
 
 public class MainThread extends Thread {
     public static final int MAX_FPS = 30;
     private double avgFPS;
     private SurfaceHolder holder;
-    private GamePanelE1 panel;
+    private GamePanel panel;
     private boolean isRunning;
     public static Canvas canvas;
 
-    public MainThread(SurfaceHolder holder, GamePanelE1 panel){
+    public MainThread(SurfaceHolder holder, GamePanel panel){
         super();
         this.holder = holder;
         this.panel = panel;
