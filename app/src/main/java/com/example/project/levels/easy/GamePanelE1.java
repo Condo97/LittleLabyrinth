@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.levels.easy;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,8 +7,16 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 
-public class GamePanelM3 extends GamePanel implements SurfaceHolder.Callback {
+import com.example.project.Constants;
+import com.example.project.Controls;
+import com.example.project.Goal;
+import com.example.project.MainThread;
+import com.example.project.Obstacle;
+import com.example.project.Player;
+
+public class GamePanelE1 extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private Player play;
     private Point point;
@@ -24,7 +32,7 @@ public class GamePanelM3 extends GamePanel implements SurfaceHolder.Callback {
     private long frameTime;
     long completedTime;
 
-    public GamePanelM3(Context context) {
+    public GamePanelE1(Context context) {
         super(context);
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
@@ -82,35 +90,6 @@ public class GamePanelM3 extends GamePanel implements SurfaceHolder.Callback {
             paint.setTextSize(40);
             paint.setColor(Color.BLACK);
             drawText(canvas, paint, "Congratulations! Your Score is: " + (completedTime + numCollide));
-            int r = 245;
-            int g = 165;
-            int b = 55;
-            while(true){
-                while(r < 255){
-                    r += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(g < 255){
-                    g += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(b < 255){
-                    b += 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(r >= 0){
-                    r -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(g >= 0){
-                    g -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-                while(b >= 0){
-                    b -= 10;
-                    canvas.drawColor(Color.argb(255, r, g, b));
-                }
-            }
         }
     }
 
@@ -130,7 +109,7 @@ public class GamePanelM3 extends GamePanel implements SurfaceHolder.Callback {
             }
 
             if(obstacle1.collision(play) || obstacle2.collision(play) || obstacle3.collision(play)) {
-                numCollide += 50;
+                numCollide += 10;
             }
 
             if(point.x < 0)

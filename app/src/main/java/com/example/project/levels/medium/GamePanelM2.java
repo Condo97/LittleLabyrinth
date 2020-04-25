@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.levels.medium;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,15 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.SurfaceHolder;
 
-public class GamePanelM2 extends GamePanel implements SurfaceHolder.Callback {
+import com.example.project.Constants;
+import com.example.project.Controls;
+import com.example.project.levels.easy.GamePanelE1;
+import com.example.project.Goal;
+import com.example.project.MainThread;
+import com.example.project.Obstacle;
+import com.example.project.Player;
+
+public class GamePanelM2 extends GamePanelE1 implements SurfaceHolder.Callback {
     private MainThread thread;
     private Player play;
     private Point point;

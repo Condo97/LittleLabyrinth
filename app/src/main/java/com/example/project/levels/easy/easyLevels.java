@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.levels.easy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class hardLevels extends AppCompatActivity {
+import com.example.project.Constants;
+import com.example.project.R;
+
+public class easyLevels extends AppCompatActivity
+{
     Button lvl1, lvl2, lvl3;
     Intent toLevel;
 
@@ -32,25 +36,25 @@ public class hardLevels extends AppCompatActivity {
         lvl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl1.class);
+                toLevel = new Intent(getApplicationContext(), easyLvl1.class);
                 startActivity(toLevel);
             }
         });
 
-        lvl2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl2.class);
-                startActivity(toLevel);
-            }
-        });
+//        lvl2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toLevel = new Intent(getApplicationContext(), easyLvl2.class);
+//                startActivity(toLevel);
+//            }
+//        });
 
-        lvl3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl3.class);
-                startActivity(toLevel);
-            }
-        });
+//        lvl1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toLevel = new Intent(getApplicationContext(), easyLvl1.class);
+//                startActivity(toLevel);
+//            }
+//        });
     }
 }

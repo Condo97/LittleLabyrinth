@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.levels.easy;
 
 
 import android.app.Activity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.project.Constants;
 
 public class easyLvl1 extends Activity {
     @Override
@@ -18,6 +20,6 @@ public class easyLvl1 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        setContentView(new GamePanel(this.getApplicationContext()));
+        setContentView(new GamePanelE1(this.getApplicationContext()));
     }
 }

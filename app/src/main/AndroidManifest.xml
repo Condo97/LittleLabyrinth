@@ -17,12 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".easyLevels" android:screenOrientation="portrait" />
-        <activity android:name=".easyLvl1" android:screenOrientation="portrait" />
-        <activity android:name=".mediumLevels" android:screenOrientation="portrait" />
-        <activity android:name=".mediumLvl1" android:screenOrientation="portrait" />
-        <activity android:name=".mediumLvl2" android:screenOrientation="portrait" />
-        <activity android:name=".mediumLvl3" android:screenOrientation="portrait" />
+        <activity android:name=".levels.easy.easyLevels" android:screenOrientation="portrait" />
+        <activity android:name=".levels.easy.easyLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".levels.medium.mediumLevels" android:screenOrientation="portrait" />
+        <activity android:name=".levels.medium.mediumLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".levels.medium.mediumLvl2" android:screenOrientation="portrait" />
+        <activity android:name=".levels.medium.mediumLvl3" android:screenOrientation="portrait" />
 
         <service android:name=".MusicService" android:stopWithTask="true"/>
     </application>

@@ -10,6 +10,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.example.project.levels.easy.easyLevels;
+import com.example.project.levels.hard.hardLevels;
+import com.example.project.levels.medium.mediumLevels;
+
 public class MainActivity extends AppCompatActivity {
     Button easy, medium, hard;
     Intent toDifficulty;

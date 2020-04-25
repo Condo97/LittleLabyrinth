@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.levels.hard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,13 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class easyLevels extends AppCompatActivity
-{
+import com.example.project.Constants;
+import com.example.project.R;
+import com.example.project.levels.medium.mediumLvl1;
+import com.example.project.levels.medium.mediumLvl2;
+import com.example.project.levels.medium.mediumLvl3;
+
+public class hardLevels extends AppCompatActivity {
     Button lvl1, lvl2, lvl3;
     Intent toLevel;
 
@@ -33,7 +38,23 @@ public class easyLevels extends AppCompatActivity
         lvl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), easyLvl1.class);
+                toLevel = new Intent(getApplicationContext(), mediumLvl1.class);
+                startActivity(toLevel);
+            }
+        });
+
+        lvl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toLevel = new Intent(getApplicationContext(), mediumLvl2.class);
+                startActivity(toLevel);
+            }
+        });
+
+        lvl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toLevel = new Intent(getApplicationContext(), mediumLvl3.class);
                 startActivity(toLevel);
             }
         });
