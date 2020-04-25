@@ -17,13 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".easyLevels" android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".easyLevels" android:screenOrientation="portrait" />
         <activity android:name=".easyLvl1" android:screenOrientation="portrait" />
-        <activity android:name=".mediumLvl1" />
-        <activity android:name=".mediumLevels" />
-        <activity android:name=".mediumLvl2" />
-        <activity android:name=".mediumLvl3" />
+        <activity android:name=".mediumLevels" android:screenOrientation="portrait" />
+        <activity android:name=".mediumLvl1" android:screenOrientation="portrait" />
+        <activity android:name=".mediumLvl2" android:screenOrientation="portrait" />
+        <activity android:name=".mediumLvl3" android:screenOrientation="portrait" />
 
         <service android:name=".MusicService" android:stopWithTask="true"/>
     </application>
