@@ -27,15 +27,15 @@ public class mediumLvl3 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        Player player = new Player(new Rect((int)(.5*Constants.screenWidth) - 30, (int)(.5*Constants.screenHeight) - 30, (int)(.5*Constants.screenWidth) + 30, (int)(.5*Constants.screenHeight) + 30), Color.RED);
-        Goal goal = new Goal(new Rect(200, 25, 275, 100), Color.GREEN);
+        Player player = new Player(new Rect(10, (int)(.25*Constants.screenHeight), 60, (int)(.25*Constants.screenHeight) + 50), Color.RED);
+        Goal goal = new Goal(new Rect((int)(.5*Constants.screenWidth) - 25, (int)(.5*Constants.screenHeight) - 25, (int)(.5*Constants.screenHeight) + 25, (int)(.5*Constants.screenHeight) + 25), Color.GREEN);
         int difficultyDeadzoneConstant = 2;
         int difficultyCollisionScoringConstant = 50;
 
         ArrayList<Obstacle> obstacles = new ArrayList<>();
-        obstacles.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
-        obstacles.add(new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK));
-        obstacles.add(new Obstacle(new Rect( 300, Constants.screenHeight/2 - 50, Constants.screenWidth - 300, Constants.screenHeight/2 + 50), Color.BLACK));
+        obstacles.add(new Obstacle(new Rect(0, player.getRect().bottom + 20, goal.getRect().right + 100, player.getRect().bottom + 95), Color.BLACK));
+        obstacles.add(new Obstacle(new Rect(player.getRect().right + 15, 75, player.getRect().right + 90, player.getRect().bottom + 20), Color.BLACK));
+        obstacles.add(new Obstacle(new Rect( player.getRect().right + 90, 75, Constants.screenWidth/4, 150), Color.BLACK));
 
         setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles));
     }

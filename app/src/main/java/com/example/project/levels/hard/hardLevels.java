@@ -38,7 +38,7 @@ public class hardLevels extends AppCompatActivity {
         lvl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl1.class);
+                toLevel = new Intent(getApplicationContext(), hardLvl1.class);
                 startActivity(toLevel);
             }
         });
@@ -46,7 +46,7 @@ public class hardLevels extends AppCompatActivity {
         lvl2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl2.class);
+                toLevel = new Intent(getApplicationContext(), hardLvl2.class);
                 startActivity(toLevel);
             }
         });
@@ -54,7 +54,7 @@ public class hardLevels extends AppCompatActivity {
         lvl3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toLevel = new Intent(getApplicationContext(), mediumLvl3.class);
+                toLevel = new Intent(getApplicationContext(), hardLvl3.class);
                 startActivity(toLevel);
             }
         });

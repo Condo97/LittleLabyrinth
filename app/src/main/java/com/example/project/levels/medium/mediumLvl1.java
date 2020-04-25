@@ -43,7 +43,5 @@ public class mediumLvl1 extends Activity {
         obstacles.add(new Obstacle(new Rect((int)(.5*Constants.screenWidth) + 25, Constants.screenHeight - 200, Constants.screenWidth, Constants.screenHeight - 125), Color.BLACK));
 
         setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles));
-
-//        setContentView(new GamePanelM1(this.getApplicationContext()));
     }
 }

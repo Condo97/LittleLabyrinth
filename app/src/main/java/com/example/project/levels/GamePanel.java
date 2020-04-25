@@ -104,7 +104,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         if(complete) {
             paint.setTextSize(40);
             paint.setColor(Color.BLACK);
-            drawText(canvas, paint, "Congradulations! Your Socre is: " + (completedTime + numCollide));
+            drawText(canvas, paint, "Congratulations! Your Score is: " + (completedTime + numCollide));
         }
     }
 
