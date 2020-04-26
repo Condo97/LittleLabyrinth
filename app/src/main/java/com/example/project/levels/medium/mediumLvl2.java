@@ -27,7 +27,7 @@ public class mediumLvl2 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        Player player = new Player(new Rect((int)(.5*Constants.screenWidth) - 30, (int)(.5*Constants.screenHeight) - 30, (int)(.5*Constants.screenWidth) + 30, (int)(.5*Constants.screenHeight) + 30), Color.RED);
+        Player player = new Player(new Rect((Constants.screenWidth/2), (Constants.screenHeight/2) - 30, (Constants.screenWidth/2) + 75, (Constants.screenHeight/2) + 30), Color.RED);
         Goal goal = new Goal(new Rect(200, 25, 275, 100), Color.GREEN);
         int difficultyDeadzoneConstant = 2;
         int difficultyCollisionScoringConstant = 50;
@@ -35,12 +35,12 @@ public class mediumLvl2 extends Activity {
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         Obstacle obstacle1 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) - 155, Constants.screenWidth, (int)(.5*Constants.screenHeight) - 80), Color.BLACK);
         Obstacle obstacle2 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 20, Constants.screenWidth - 85, (int)(.5*Constants.screenHeight) + 95), Color.BLACK);
-        Obstacle obstacle3 = new Obstacle(new Rect( (int)(.4*Constants.screenWidth) - 75, obstacle1.getRect().top, (int)(.4*Constants.screenWidth), Constants.screenHeight - 100), Color.BLACK);
+        Obstacle obstacle3 = new Obstacle(new Rect( (int)(.4*Constants.screenWidth) - 75, 300, (int)(.4*Constants.screenWidth), Constants.screenHeight - 100), Color.BLACK);
         Obstacle obstacle4 = new Obstacle(new Rect(obstacle3.getRect().right + 110, obstacle2.getRect().bottom + 100, Constants.screenWidth, obstacle2.getRect().bottom + 175), Color.BLACK);
         Obstacle obstacle6 = new Obstacle(new Rect(obstacle3.getRect().right, obstacle3.getRect().bottom - 75, Constants.screenWidth - 100, obstacle3.getRect().bottom), Color.BLACK);
         Obstacle obstacle7 = new Obstacle(new Rect(100, obstacle2.getRect().top, obstacle3.getRect().left, obstacle2.getRect().bottom), Color.BLACK);
         Obstacle obstacle8 = new Obstacle(new Rect(obstacle7.getRect().right, obstacle7.getRect().top, obstacle3.getRect().left, obstacle2.getRect().bottom), Color.BLACK);
-        Obstacle obstacle9 = new Obstacle(new Rect(obstacle7.getRect().right + 25,0, obstacle7.getRect().right + 100, obstacle1.getRect().bottom), Color.BLACK);
+        Obstacle obstacle9 = new Obstacle(new Rect(80,0, goal.getRect().left - 10, obstacle1.getRect().bottom), Color.BLACK);
         Obstacle obstacle10 = new Obstacle(new Rect(obstacle9.getRect().right, 125, obstacle4.getRect().left, 200), Color.BLACK);
         Obstacle obstacle5 = new Obstacle(new Rect(obstacle4.getRect().left + 100, obstacle4.getRect().bottom, obstacle4.getRect().left + 150, obstacle6.getRect().top - 100), Color.BLACK);
 
