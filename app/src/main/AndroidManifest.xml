@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.project">
 
     <application
@@ -29,6 +28,7 @@
         <activity android:name=".levels.hard.hardLvl1" android:screenOrientation="portrait" />
         <activity android:name=".levels.hard.hardLvl2" android:screenOrientation="portrait" />
         <activity android:name=".levels.hard.hardLvl3" android:screenOrientation="portrait" />
+        <activity android:name=".Help" android:screenOrientation="portrait" />
 
         <service android:name=".MusicService" android:stopWithTask="true"/>
     </application>
