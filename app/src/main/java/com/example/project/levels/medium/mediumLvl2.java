@@ -26,7 +26,6 @@ public class mediumLvl2 extends Activity {
         Constants.screenWidth = display.widthPixels;
         Constants.screenHeight = display.heightPixels;
 
-        Player player = new Player(new Rect((Constants.screenWidth/2), (Constants.screenHeight/2) - 30, (Constants.screenWidth/2) + 75, (Constants.screenHeight/2) + 30), Color.RED);
         Goal goal = new Goal(new Rect(200, 25, 275, 100), Color.GREEN);
         int difficultyDeadzoneConstant = 2;
         int difficultyCollisionScoringConstant = 50;
@@ -41,7 +40,9 @@ public class mediumLvl2 extends Activity {
         Obstacle obstacle8 = new Obstacle(new Rect(obstacle7.getRect().right, obstacle7.getRect().top, obstacle3.getRect().left, obstacle2.getRect().bottom), Color.BLACK);
         Obstacle obstacle9 = new Obstacle(new Rect(80,0, goal.getRect().left - 10, obstacle1.getRect().bottom), Color.BLACK);
         Obstacle obstacle10 = new Obstacle(new Rect(obstacle9.getRect().right, 125, obstacle4.getRect().left, 200), Color.BLACK);
-        Obstacle obstacle5 = new Obstacle(new Rect(obstacle4.getRect().left + 100, obstacle4.getRect().bottom, obstacle4.getRect().left + 150, obstacle6.getRect().top - 100), Color.BLACK);
+        Obstacle obstacle5 = new Obstacle(new Rect(obstacle4.getRect().left + 35, obstacle4.getRect().bottom, obstacle4.getRect().left + 150, obstacle6.getRect().top - 100), Color.BLACK);
+
+        Player player = new Player(new Rect(obstacle3.getRect().right + 10, obstacle1.getRect().bottom + 10, obstacle3.getRect().right + 85, obstacle2.getRect().top - 15), Color.RED);
 
         obstacles.add(obstacle1);
         obstacles.add(obstacle2);
