@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
-
 import com.example.project.Constants;
 import com.example.project.Goal;
 import com.example.project.Obstacle;

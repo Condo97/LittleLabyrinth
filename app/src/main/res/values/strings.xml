@@ -11,4 +11,6 @@
     <string name="congratulations">Congratulations!</string>
     <string name="back_to_home">Back to Home</string>
     <string name="your_score">Your Score:</string>
+    <string name="Help_Text">Welcome to The Little Labyrinth! In this game, you control a red sqaure and your objective is to reach the green goal. You control the red square by tilting your device. Try to get through each level as quickly as possible without running into any obstacles. Running into obstacles makes your score jump and score gradually increases as time goes on. See how low of a score you can get on each level! I hope you enjoy the game.</string>
+    <string name="about_us">About Us</string>
 </resources>

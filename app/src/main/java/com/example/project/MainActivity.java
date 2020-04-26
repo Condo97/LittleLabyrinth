@@ -15,7 +15,7 @@ import com.example.project.levels.hard.hardLevels;
 import com.example.project.levels.medium.mediumLevels;
 
 public class MainActivity extends AppCompatActivity {
-    Button easy, medium, hard;
+    Button easy, medium, hard, help;
     Intent toDifficulty;
 
     @Override
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         easy = findViewById(R.id.easy);
         medium = findViewById(R.id.medium);
         hard = findViewById(R.id.hard);
+        help = findViewById(R.id.about);
 
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toDifficulty);
             }
         });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDifficulty = new Intent(getApplicationContext(), Help.class);
+                startActivity(toDifficulty);
+            }
+        });
     }
-
-
 }
