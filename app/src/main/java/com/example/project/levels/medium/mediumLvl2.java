@@ -33,7 +33,7 @@ public class mediumLvl2 extends Activity {
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         Obstacle obstacle1 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) - 155, Constants.screenWidth, (int)(.5*Constants.screenHeight) - 80), Color.BLACK);
         Obstacle obstacle2 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 20, Constants.screenWidth - 85, (int)(.5*Constants.screenHeight) + 95), Color.BLACK);
-        Obstacle obstacle3 = new Obstacle(new Rect( (int)(.4*Constants.screenWidth) - 75, 300, (int)(.4*Constants.screenWidth), Constants.screenHeight - 100), Color.BLUE);
+        Obstacle obstacle3 = new Obstacle(new Rect( (int)(.4*Constants.screenWidth) - 75, 300, (int)(.4*Constants.screenWidth), Constants.screenHeight - 100), Color.BLACK);
         Obstacle obstacle4 = new Obstacle(new Rect(obstacle3.getRect().right + 110, obstacle2.getRect().bottom + 100, Constants.screenWidth, obstacle2.getRect().bottom + 175), Color.BLACK);
         Obstacle obstacle6 = new Obstacle(new Rect(obstacle3.getRect().right, obstacle3.getRect().bottom - 75, Constants.screenWidth - 100, obstacle3.getRect().bottom), Color.BLACK);
         Obstacle obstacle7 = new Obstacle(new Rect(100, obstacle2.getRect().top, obstacle3.getRect().left, obstacle2.getRect().bottom), Color.BLACK);
@@ -42,7 +42,7 @@ public class mediumLvl2 extends Activity {
         Obstacle obstacle10 = new Obstacle(new Rect(obstacle9.getRect().right, 125, obstacle4.getRect().left, 200), Color.BLACK);
         Obstacle obstacle5 = new Obstacle(new Rect(obstacle4.getRect().left + 35, obstacle4.getRect().bottom, obstacle4.getRect().left + 150, obstacle6.getRect().top - 100), Color.BLACK);
 
-        Player player = new Player(new Rect(obstacle3.getRect().right - 10, obstacle1.getRect().bottom - 10, obstacle3.getRect().right + 75, obstacle2.getRect().top - 15), Color.RED);
+        Player player = new Player(new Rect(obstacle3.getRect().right - 10, obstacle1.getRect().bottom - 2, obstacle3.getRect().right + 75, obstacle2.getRect().top - 20), Color.RED);
 
         obstacles.add(obstacle1);
         obstacles.add(obstacle2);
