@@ -37,6 +37,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     public GamePanel(Context context, Player player, Goal goal, int difficultyDeadzoneConstant, int difficultyCollisionScoringConstant, ArrayList<Obstacle> obstacles) {
         super(context);
+        getHolder().addCallback(this);
 
         //Instantiate common objects
         mainThread = new MainThread(getHolder(), this);
@@ -112,6 +113,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     /******* GamePanel Functions *******/
 
     public void update() {
+        System.out.println("RE");
         if(!complete) {
             int elapsedTime = (int)(System.currentTimeMillis() - frameTime);
             frameTime = System.currentTimeMillis();
