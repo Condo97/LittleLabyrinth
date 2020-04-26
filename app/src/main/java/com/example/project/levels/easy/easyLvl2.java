@@ -42,8 +42,9 @@ public class easyLvl2 extends Activity {
         //All obstacles in the game are added to this ArrayList
         ArrayList<Obstacle> obstacles2 = new ArrayList<>();
         obstacles2.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(400, Constants.screenHeight - 500 - Constants.screenHeight / 2, Constants.screenWidth, Constants.screenHeight - 400 - Constants.screenHeight / 2), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(0, 225 + Constants.screenHeight / 2, Constants.screenWidth - 400, 325 + Constants.screenHeight / 2), Color.BLACK));
         obstacles2.add(new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect( 300, Constants.screenHeight/2 - 50, Constants.screenWidth - 300, Constants.screenHeight/2 + 50), Color.BLACK));
 
         //GamePanel is now one class rather than a new GamePanel for each level, and must include these variables
         setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles2));

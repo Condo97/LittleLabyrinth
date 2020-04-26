@@ -42,8 +42,18 @@ public class easyLvl3 extends Activity {
         //All obstacles in the game are added to this ArrayList
         ArrayList<Obstacle> obstacles2 = new ArrayList<>();
         obstacles2.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
+
+        obstacles2.add(new Obstacle(new Rect(0, Constants.screenHeight / 4, Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 4, 3 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(4 * Constants.screenWidth / 5, Constants.screenHeight / 4, 5 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 225, 5 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
+
+        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 4, Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(4 *  Constants.screenWidth / 5, 2 * Constants.screenHeight / 4, 5 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 4 + 225, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
+
         obstacles2.add(new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect( 300, Constants.screenHeight/2 - 50, Constants.screenWidth - 300, Constants.screenHeight/2 + 50), Color.BLACK));
 
         //GamePanel is now one class rather than a new GamePanel for each level, and must include these variables
         setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles2));
