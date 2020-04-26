@@ -43,15 +43,20 @@ public class easyLvl3 extends Activity {
         ArrayList<Obstacle> obstacles2 = new ArrayList<>();
         obstacles2.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
 
-        obstacles2.add(new Obstacle(new Rect(0, Constants.screenHeight / 4, Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 4, 3 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(4 * Constants.screenWidth / 5, Constants.screenHeight / 4, 5 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 225, 5 * Constants.screenWidth / 5, Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(0, Constants.screenHeight / 5, Constants.screenWidth / 5, Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 5, 3 * Constants.screenWidth / 5, Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(4 * Constants.screenWidth / 5, Constants.screenHeight / 5, 5 * Constants.screenWidth / 5, Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, Constants.screenHeight / 5 + 225, 5 * Constants.screenWidth / 5, Constants.screenHeight / 5 + 325), Color.BLACK));
 
-        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 4, Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(4 *  Constants.screenWidth / 5, 2 * Constants.screenHeight / 4, 5 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
-        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 4 + 225, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 4 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 5, Constants.screenWidth / 5, 2 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 5, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(4 *  Constants.screenWidth / 5, 2 * Constants.screenHeight / 5, 5 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(0, 2 * Constants.screenHeight / 5 + 225, 3 * Constants.screenWidth / 5, 2 * Constants.screenHeight / 5 + 325), Color.BLACK));
+
+        obstacles2.add(new Obstacle(new Rect(0, 3 * Constants.screenHeight / 5, Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5, 3 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(4 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5, 5 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 325), Color.BLACK));
+        obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 225, 5 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 325), Color.BLACK));
 
         obstacles2.add(new Obstacle(new Rect(400, Constants.screenHeight - 500, Constants.screenWidth, Constants.screenHeight - 400), Color.BLACK));
 
