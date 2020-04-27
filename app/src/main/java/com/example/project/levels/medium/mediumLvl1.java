@@ -32,6 +32,9 @@ public class mediumLvl1 extends Activity {
         int difficultyDeadzoneConstant = 2;
         int difficultyCollisionScoringConstant = 50;
 
+        //This is the difficulty collision constant
+        int difficultyCollisionConstant = 40;
+
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         obstacles.add(new Obstacle(new Rect(0,  200, (int)(.5*Constants.screenWidth), 275), Color.BLACK));
         obstacles.add(new Obstacle(new Rect((int)(.5*Constants.screenWidth) + 110, 200, Constants.screenWidth, 275), Color.BLACK));
@@ -42,6 +45,6 @@ public class mediumLvl1 extends Activity {
         obstacles.add(new Obstacle(new Rect((int)(.7*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 75, (int)(.7*Constants.screenWidth) + 75, Constants.screenHeight - 310), Color.BLACK));
         obstacles.add(new Obstacle(new Rect((int)(.5*Constants.screenWidth) + 25, Constants.screenHeight - 200, Constants.screenWidth, Constants.screenHeight - 125), Color.BLACK));
 
-        setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles));
+        setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, difficultyCollisionConstant, obstacles));
     }
 }

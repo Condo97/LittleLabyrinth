@@ -30,12 +30,12 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     private Player player;
     private Goal goal;
-    private int difficultyDeadzoneConstant, difficultyCollisionScoringConstant;
+    private int difficultyDeadzoneConstant, difficultyCollisionScoringConstant, difficultyCollisionConstant;
     private ArrayList<Obstacle> obstacles = new ArrayList<>();
 
     public long completedTime;
 
-    public GamePanel(Context context, Player player, Goal goal, int difficultyDeadzoneConstant, int difficultyCollisionScoringConstant, ArrayList<Obstacle> obstacles) {
+    public GamePanel(Context context, Player player, Goal goal, int difficultyDeadzoneConstant, int difficultyCollisionScoringConstant, int difficultyCollisionConstant, ArrayList<Obstacle> obstacles) {
         super(context);
         getHolder().addCallback(this);
 
@@ -52,6 +52,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         this.goal = goal;
         this.difficultyDeadzoneConstant = difficultyDeadzoneConstant;
         this.difficultyCollisionScoringConstant = difficultyCollisionScoringConstant;
+        this.difficultyCollisionConstant = difficultyCollisionConstant;
         this.obstacles = obstacles;
     }
 
@@ -137,10 +138,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
             for(Obstacle obstacle: obstacles) {
                 if(obstacle.collision(player)) {
-                    if(obstacle.getRect().top <= player.getRect().bottom && obstacle.getRect().top > player.getRect().top) point.y = obstacle.getRect().top - Constants.collisionConstant;
-                    else if(obstacle.getRect().bottom >= player.getRect().top && obstacle.getRect().bottom < player.getRect().bottom) point.y = obstacle.getRect().bottom + Constants.collisionConstant;
-                    else if(obstacle.getRect().left <= player.getRect().right && obstacle.getRect().left > player.getRect().left) point.x = obstacle.getRect().left - Constants.collisionConstant;
-                    else if(obstacle.getRect().right >= player.getRect().left && obstacle.getRect().right < player.getRect().right) point.x = obstacle.getRect().right + Constants.collisionConstant;
+                    if(obstacle.getRect().top <= player.getRect().bottom && obstacle.getRect().top > player.getRect().top) point.y = obstacle.getRect().top - difficultyCollisionConstant;
+                    else if(obstacle.getRect().bottom >= player.getRect().top && obstacle.getRect().bottom < player.getRect().bottom) point.y = obstacle.getRect().bottom + difficultyCollisionConstant;
+                    else if(obstacle.getRect().left <= player.getRect().right && obstacle.getRect().left > player.getRect().left) point.x = obstacle.getRect().left - difficultyCollisionConstant;
+                    else if(obstacle.getRect().right >= player.getRect().left && obstacle.getRect().right < player.getRect().right) point.x = obstacle.getRect().right + difficultyCollisionConstant;
                 }
             }
 

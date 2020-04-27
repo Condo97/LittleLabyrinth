@@ -31,6 +31,9 @@ public class hardLvl2 extends Activity {
         int difficultyDeadzoneConstant = 1;
         int difficultyCollisionScoringConstant = 100;
 
+        //This is the difficulty collision constant
+        int difficultyCollisionConstant = 55;
+
         ArrayList<Obstacle> obstacles = new ArrayList<>();
     }
 }

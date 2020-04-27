@@ -39,6 +39,9 @@ public class easyLvl3 extends Activity {
         //This was the collision scoring constant that was 10 in easy, 50 in medium, and was established as 100 in hard
         int difficultyCollisionScoringConstant = 10;
 
+        //This is the difficulty collision constant
+        int difficultyCollisionConstant = 55;
+
         //All obstacles in the game are added to this ArrayList
         ArrayList<Obstacle> obstacles2 = new ArrayList<>();
         obstacles2.add(new Obstacle(new Rect(0, 225, Constants.screenWidth - 400, 325), Color.BLACK));
@@ -59,6 +62,6 @@ public class easyLvl3 extends Activity {
         obstacles2.add(new Obstacle(new Rect(2 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 225, 5 * Constants.screenWidth / 5, 3 * Constants.screenHeight / 5 + 325), Color.BLACK));
 
         //GamePanel is now one class rather than a new GamePanel for each level, and must include these variables
-        setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, obstacles2));
+        setContentView(new GamePanel(this.getApplicationContext(), player, goal, difficultyDeadzoneConstant, difficultyCollisionScoringConstant, difficultyCollisionConstant, obstacles2));
     }
 }
