@@ -33,7 +33,7 @@ public class hardLvl1 extends Activity {
         int difficultyCollisionScoringConstant = 100;
 
         //This is the difficulty collision constant
-        int difficultyCollisionConstant = 55;
+        int difficultyCollisionConstant = 30;
 
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         obstacles.add(new Obstacle(new Rect(0, 0, Constants.screenWidth/2, 50), Color.BLACK));
