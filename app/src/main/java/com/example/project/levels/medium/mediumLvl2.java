@@ -32,7 +32,7 @@ public class mediumLvl2 extends Activity {
 
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         Obstacle obstacle1 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) - 155, Constants.screenWidth, (int)(.5*Constants.screenHeight) - 80), Color.BLACK);
-        Obstacle obstacle2 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 20, Constants.screenWidth - 85, (int)(.5*Constants.screenHeight) + 95), Color.BLACK);
+        Obstacle obstacle2 = new Obstacle(new Rect((int)(.4*Constants.screenWidth), (int)(.5*Constants.screenHeight) + 20, Constants.screenWidth - 115, (int)(.5*Constants.screenHeight) + 95), Color.BLACK);
         Obstacle obstacle3 = new Obstacle(new Rect( (int)(.4*Constants.screenWidth) - 75, 300, (int)(.4*Constants.screenWidth), Constants.screenHeight - 100), Color.BLACK);
         Obstacle obstacle4 = new Obstacle(new Rect(obstacle3.getRect().right + 110, obstacle2.getRect().bottom + 100, Constants.screenWidth, obstacle2.getRect().bottom + 175), Color.BLACK);
         Obstacle obstacle6 = new Obstacle(new Rect(obstacle3.getRect().right, obstacle3.getRect().bottom - 75, Constants.screenWidth - 100, obstacle3.getRect().bottom), Color.BLACK);
